@@ -1,3 +1,4 @@
+
 const someObj = {
 	name: ['Vasya', 'Kolya'],
   size: ['xs', 's'],
