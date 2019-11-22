@@ -1,3 +1,13 @@
+let a = { n: 1, };
+console.log('a 1 = ', a); // Console log выводит всегда последнее значние.
+let b = a;
+console.log('b = ', b);
+a.x = a = { n: 2 };
+
+console.log(' a = ', a); // Question what output and why ?
+
+
+
 const someObj = {
 	name: ['Vasya', 'Kolya'],
   size: ['xs', 's'],
@@ -16,7 +26,7 @@ const someObj = {
 ] */
 
 
-let outputArr;
+/* let outputArr;
 
 function () {
 	const outputArr;
@@ -56,4 +66,40 @@ function getObjLey() {
    });
 
    return tempObj;
+} */
+
+
+/** Найти два мининальных числа за один проход(цикл) */
+
+const arr1 = [12,321,123,2,31,2,45,456,67];
+
+const doubleMin = (arr) => {
+    let min1, min2, buffer;
+
+    if (arr[0] < arr[1]) {
+        min1 = arr[0];
+        min2 = arr[1];
+    } else {
+        min1 = arr[1];
+        min2 = arr[0];
+    }
+
+    for (let i = 2; i < arr.length; i++) {
+        if (min1 > arr[i]) {
+            buffer = min1;
+            min1 = arr[i];
+            if (buffer < min2) {
+                min2 = buffer;
+            }
+        } else {
+            if (min2 > a[i]) {
+                min2 = a[i];
+            }
+        }
+    }
+    return {
+        min1,
+        min2
+    };
 }
+console.log('doubleMin = ', doubleMin(arr1));
