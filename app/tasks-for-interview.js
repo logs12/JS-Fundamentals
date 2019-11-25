@@ -1,18 +1,24 @@
-let a = { n: 1, };
-console.log('a 1 = ', a); // Console log выводит всегда последнее значние.
+let a = { n: 1 };
 let b = a;
-console.log('b = ', b);
 a.x = a = { n: 2 };
-
 console.log(' a = ', a); // Question what output and why ?
+console.log(' a.x = ', a.x); // Question what output and why ?
+/*
+    Ответ, выведется: { n: 2 }
+    Почему: перед присваиванием foo.x все еще была ссылка на старый foo.
+    let a = { n: 1 };
+    let b = a;
+    a = { n: 2 };
+    b.x = a;
+*/
 
 
-
+/*
 const someObj = {
 	name: ['Vasya', 'Kolya'],
-  size: ['xs', 's'],
-  color: ['red', 'green']
-};
+    size: ['xs', 's'],
+    color: ['red', 'green']
+}; */
 
 /* [
     { name: 'Vasya', size: 'xs', color: 'red' },
@@ -103,3 +109,13 @@ const doubleMin = (arr) => {
     };
 }
 console.log('doubleMin = ', doubleMin(arr1));
+
+
+/**
+    Каррирование
+    Написать универсальную функцию каррирующую аргументы
+*/
+
+function carry(args) {
+    return carried
+}

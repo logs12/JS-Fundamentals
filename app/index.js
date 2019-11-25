@@ -9,6 +9,5 @@
 //import * as o09 from './09.iterators';
 //import * as o10 from './10.dom';
 import * as tasks from './tasks-for-interview';
-
-import * as tаsks-codewars from './tаsks-codewars';
+//import * as tаsks-codewars from './tаsks-codewars';
 //import * as tasks-for-interview from './tasks-for-interview';

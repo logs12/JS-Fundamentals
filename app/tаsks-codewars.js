@@ -1,7 +1,7 @@
 /** Reversed Strings */
 
-function solution(str){
+/* function solution(str){
     str
 }
 
-solution('world'); // returns 'dlrow'
+solution('world'); */ // returns 'dlrow'
