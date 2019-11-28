@@ -110,6 +110,68 @@ const doubleMin = (arr) => {
 }
 console.log('doubleMin = ', doubleMin(arr1));
 
+/* --- Task #1 --- */
+
+const arrTest = [4, '5', ['e', 3, ['sf', false, ['re', {re: 12}, 're', 43], 54], 'rwd'], ['e', 5, true, [4, 6]], 54];
+
+const expectedResult = [
+    4,
+    '5',
+    'e',
+    3,
+    'sf',
+    false,
+    're',
+    { re: 12 },
+    're',
+    43,
+    54,
+    'rwd',
+    'e',
+    5,
+    true,
+    4,
+    6,
+    54,
+];
+
+/**
+ *  Implementation with recursive algorithm
+ * @param {*} array
+ * @param {*} isArray
+ */
+function flatten(array, isArray = false) {
+    const newArray = [];
+    array.forEach((item) => {
+        if (Array.isArray(item) && item.length) {
+            flatten(item, true);
+        } else {
+            newArray.push(item);
+        }
+    });
+    return newArray;
+}
+
+/**
+ *  Implementation with stack algorithm
+ * @param {*} array
+ * @param {*} isArray
+ */
+
+function flatten(array, isArray = false) {
+    const newArray = [];
+    array.forEach((item) => {
+        if (Array.isArray(item) && item.length) {
+            flatten(item, true);
+        } else {
+            newArray.push(item);
+        }
+    });
+    return newArray;
+}
+
+console.log('flatten = ', flatten(arrTest));
+
 
 /**
     Каррирование
