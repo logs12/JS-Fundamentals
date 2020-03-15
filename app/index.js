@@ -1,3 +1,5 @@
+import "./styles/index.css";
+
 //import * as o01 from './01.primitive-data-types';
 //import * as o02 from './02.strings';
 //import * as o03 from './03.arrays';
@@ -10,5 +12,16 @@
 //import * as o10 from './10.dom';
 import * as tasks from './tasks-for-interview';
 
+import {
+  testForCheckMatches,
+  testForCreationOfString,
+  testForFlatten,
+  testForCalc
+} from "./tasks-for-interview-test.js";
+
+testForCheckMatches();
+testForCreationOfString();
+testForFlatten();
+testForCalc();
+
 import * as tаsks-codewars from './tаsks-codewars';
-//import * as tasks-for-interview from './tasks-for-interview';

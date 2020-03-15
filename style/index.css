@@ -1,0 +1,17 @@
+body {
+    font-family: sans-serif;
+}
+
+.errors > .error {
+    color: red;
+    padding: 5px 0px;
+}
+
+.errors > .success {
+    color: green;
+    padding: 5px 0px;
+}
+
+.delemiter {
+    padding: 10px;
+}
