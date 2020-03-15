@@ -1,12 +1,16 @@
-/** Что выведется в console.log */
-
-let a = { n: 1, };
-console.log('a 1 = ', a); // Console log выводит всегда последнее значние.
+let a = { n: 1 };
 let b = a;
 a.x = a = { n: 2 };
-
-console.log('a = ', a); // Question what output and why ?
-
+console.log(' a = ', a); // Question what output and why ?
+console.log(' a.x = ', a.x); // Question what output and why ?
+/*
+    Ответ, выведется: { n: 2 }
+    Почему: перед присваиванием foo.x все еще была ссылка на старый foo.
+    let a = { n: 1 };
+    let b = a;
+    a = { n: 2 };
+    b.x = a;
+*/
 
 /**
     Необходимо перемешать филды объекта, чтобы получилась коллекция вот в таком виде
@@ -21,15 +25,13 @@ console.log('a = ', a); // Question what output and why ?
         { name: 'Kolya', size: 's', color: 'red' },
         { name: 'Kolya', size: 's', color: 'green'},
     ]
+
+    const someObj = {
+        name: ['Vasya', 'Kolya'],
+        size: ['xs', 's'],
+        color: ['red', 'green']
+    };
  */
-
-
-const someObj = {
-	name: ['Vasya', 'Kolya'],
-    size: ['xs', 's'],
-    color: ['red', 'green']
-};
-
 let outputArr;
 
 function () {
@@ -148,3 +150,74 @@ export function flatten(obj) {}
 // calc(1)(5)(2)((x, y) => x * y) === 10
 // calc(16)(8)((x, y) => x / y) === 2
 export function calc() {}
+/* --- Task #1 --- */
+
+const arrTest = [4, '5', ['e', 3, ['sf', false, ['re', {re: 12}, 're', 43], 54], 'rwd'], ['e', 5, true, [4, 6]], 54];
+
+const expectedResult = [
+    4,
+    '5',
+    'e',
+    3,
+    'sf',
+    false,
+    're',
+    { re: 12 },
+    're',
+    43,
+    54,
+    'rwd',
+    'e',
+    5,
+    true,
+    4,
+    6,
+    54,
+];
+
+/**
+ *  Implementation with recursive algorithm
+ * @param {*} array
+ * @param {*} isArray
+ */
+function flatten(array, isArray = false) {
+    const newArray = [];
+    array.forEach((item) => {
+        if (Array.isArray(item) && item.length) {
+            flatten(item, true);
+        } else {
+            newArray.push(item);
+        }
+    });
+    return newArray;
+}
+
+/**
+ *  Implementation with stack algorithm
+ * @param {*} array
+ * @param {*} isArray
+ */
+
+function flatten(array, isArray = false) {
+    const newArray = [];
+    array.forEach((item) => {
+        if (Array.isArray(item) && item.length) {
+            flatten(item, true);
+        } else {
+            newArray.push(item);
+        }
+    });
+    return newArray;
+}
+
+console.log('flatten = ', flatten(arrTest));
+
+
+/**
+    Каррирование
+    Написать универсальную функцию каррирующую аргументы
+*/
+
+function carry(args) {
+    return carried
+}
